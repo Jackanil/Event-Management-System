@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Event Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Payment</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html">Admin Dashboard</a></li>
+                    <li><a href="booking.html">Book Event</a></li>
+                    <li><a href="payment.html" class="active">Payments</a></li>
+                    <li><a href="report.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="payment-container">
+                <section class="booking-summary">
+                    <h2>Booking Summary</h2>
+                    <div class="summary-details">
+                        <p><strong>Event:</strong> <span id="eventName"></span></p>
+                        <p><strong>Date:</strong> <span id="eventDate"></span></p>
+                        <p><strong>Time:</strong> <span id="eventTime"></span></p>
+                        <p><strong>Number of Tickets:</strong> <span id="ticketCount"></span></p>
+                        <p><strong>Price per Ticket:</strong> <span id="pricePerTicket"></span></p>
+                        <p><strong>Total Amount:</strong> <span id="totalAmount"></span></p>
+                    </div>
+                </section>
+
+                <section class="payment-form">
+                    <h2>Payment Details</h2>
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label for="cardName">Name on Card:</label>
+                            <input type="text" id="cardName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" id="cardNumber" maxlength="16" required>
+                        </div>
+                        <div class="card-details">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date:</label>
+                                <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV:</label>
+                                <input type="password" id="cvv" maxlength="3" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="billingAddress">Billing Address:</label>
+                            <textarea id="billingAddress" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Complete Payment</button>
+                    </form>
+                </section>
+
+                <section class="payment-methods">
+                    <h2>Accepted Payment Methods</h2>
+                    <div class="payment-icons">
+                        <img src="images/visa.png" alt="Visa">
+                        <img src="images/mastercard.png" alt="Mastercard">
+                        <img src="images/amex.png" alt="American Express">
+                    </div>
+                    <p class="security-note">
+                        <span class="secure-icon">🔒</span>
+                        Your payment information is secure and encrypted
+                    </p>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Event Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="./payment.js"></script>
+</body>
+</html> 

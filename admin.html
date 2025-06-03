@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Event Management System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html" class="active">Admin Dashboard</a></li>
+                    <li><a href="booking.html">Book Event</a></li>
+                    <li><a href="payment.html">Payments</a></li>
+                    <li><a href="report.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="admin-grid">
+                <section class="event-management">
+                    <h2>Event Management</h2>
+                    <form id="eventForm" class="admin-form">
+                        <div class="form-group">
+                            <label for="eventName">Event Name:</label>
+                            <input type="text" id="eventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Date:</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Time:</label>
+                            <input type="time" id="eventTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Location:</label>
+                            <input type="text" id="eventLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventCapacity">Capacity:</label>
+                            <input type="number" id="eventCapacity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventPrice">Price:</label>
+                            <input type="number" id="eventPrice" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Description:</label>
+                            <textarea id="eventDescription" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Event</button>
+                    </form>
+                </section>
+
+                <section class="event-list">
+                    <h2>Manage Events</h2>
+                    <div class="filter-sort">
+                        <input type="text" id="searchEvent" placeholder="Search events...">
+                        <select id="sortEvents">
+                            <option value="date-asc">Date (Ascending)</option>
+                            <option value="date-desc">Date (Descending)</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                    <div id="eventsList" class="admin-events-list"></div>
+                </section>
+
+                <section class="booking-requests">
+                    <h2>Booking Requests</h2>
+                    <div id="bookingRequestsList"></div>
+                </section>
+
+                <section class="quick-stats">
+                    <h2>Quick Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Events</h3>
+                            <p id="totalEvents">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Active Bookings</h3>
+                            <p id="activeBookings">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Revenue</h3>
+                            <p id="totalRevenue">$0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Pending Requests</h3>
+                            <p id="pendingRequests">0</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Event Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="./admin.js"></script>
+</body>
+</html> 

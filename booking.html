@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Event - Event Management System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Event</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html">Admin Dashboard</a></li>
+                    <li><a href="booking.html" class="active">Book Event</a></li>
+                    <li><a href="payment.html">Payments</a></li>
+                    <li><a href="report.html">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="booking-container">
+                <section class="available-events">
+                    <h2>Available Events</h2>
+                    <div class="filter-sort">
+                        <input type="text" id="searchEvent" placeholder="Search events...">
+                        <select id="filterCategory">
+                            <option value="all">All Categories</option>
+                            <option value="conference">Conference</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="seminar">Seminar</option>
+                            <option value="concert">Concert</option>
+                        </select>
+                    </div>
+                    <div id="eventsList" class="events-grid"></div>
+                </section>
+
+                <section class="booking-form" id="bookingFormSection" style="display: none;">
+                    <h2>Book Event: <span id="selectedEventName"></span></h2>
+                    <form id="bookingForm">
+                        <input type="hidden" id="eventId">
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tickets">Number of Tickets:</label>
+                            <input type="number" id="tickets" min="1" required>
+                        </div>
+                        <div class="price-summary">
+                            <p>Price per ticket: <span id="ticketPrice">$0</span></p>
+                            <p>Total amount: <span id="totalAmount">$0</span></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Event Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="./booking.js"></script>
+</body>
+</html> 

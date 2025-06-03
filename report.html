@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Event Management System</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reports & Analytics</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html">Admin Dashboard</a></li>
+                    <li><a href="booking.html">Book Event</a></li>
+                    <li><a href="payment.html">Payments</a></li>
+                    <li><a href="report.html" class="active">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="reports-container">
+                <section class="report-filters">
+                    <h2>Report Filters</h2>
+                    <div class="filter-group">
+                        <div class="form-group">
+                            <label for="dateRange">Date Range:</label>
+                            <select id="dateRange">
+                                <option value="7">Last 7 Days</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="365">Last Year</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="form-group custom-date-range" style="display: none;">
+                            <label for="startDate">Start Date:</label>
+                            <input type="date" id="startDate">
+                            <label for="endDate">End Date:</label>
+                            <input type="date" id="endDate">
+                        </div>
+                    </div>
+                </section>
+
+                <div class="reports-grid">
+                    <section class="revenue-report">
+                        <h2>Revenue Analysis</h2>
+                        <canvas id="revenueChart"></canvas>
+                        <div class="report-summary">
+                            <div class="summary-card">
+                                <h3>Total Revenue</h3>
+                                <p id="totalRevenue">$0</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Average Revenue per Event</h3>
+                                <p id="avgRevenue">$0</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="events-report">
+                        <h2>Event Statistics</h2>
+                        <canvas id="eventsChart"></canvas>
+                        <div class="report-summary">
+                            <div class="summary-card">
+                                <h3>Total Events</h3>
+                                <p id="totalEvents">0</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Most Popular Category</h3>
+                                <p id="popularCategory">-</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bookings-report">
+                        <h2>Booking Analytics</h2>
+                        <canvas id="bookingsChart"></canvas>
+                        <div class="report-summary">
+                            <div class="summary-card">
+                                <h3>Total Bookings</h3>
+                                <p id="totalBookings">0</p>
+                            </div>
+                            <div class="summary-card">
+                                <h3>Booking Rate</h3>
+                                <p id="bookingRate">0%</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="detailed-report">
+                        <h2>Detailed Report</h2>
+                        <div class="table-container">
+                            <table id="detailedReport">
+                                <thead>
+                                    <tr>
+                                        <th>Event Name</th>
+                                        <th>Date</th>
+                                        <th>Bookings</th>
+                                        <th>Revenue</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reportTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button id="exportReport" class="btn btn-secondary">Export Report</button>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Event Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="./report.js"></script>
+</body>
+</html> 
